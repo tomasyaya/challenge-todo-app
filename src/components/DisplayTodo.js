@@ -24,6 +24,7 @@ class DisplayTodo extends Component {
         key={_id}
         title={title}
         body={body}
+        id={_id}
         />
       )
     })
@@ -32,7 +33,7 @@ class DisplayTodo extends Component {
   render() {
     const { isLoaded } = this.state;
     return (
-      <div>
+      <div className="display-todos-container">
         <h1>display todo</h1>
         {isLoaded ? this.paintTodos() : null}
       </div>

@@ -17,6 +17,11 @@ class TodoService {
     return this.api.post(`/todos`, body)
       .then(({data}) => data)
   }
+
+  deleteTodo = (id) => {
+    return this.api.delete(`/todos/${id}`)
+      .then(({data}) => data)
+  }
   
 }
 

@@ -16,3 +16,20 @@ body {
   text-align: center;
   justify-content: center;
 }
+
+.display-todos-container {
+  text-align: center;
+  margin: 0 auto;
+}
+
+
+.todo-card {
+  border-radius: 8px;
+  box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+  text-align: start;
+  padding: 5px;
+  padding-left: 10px;
+  width: 50%;
+  margin: auto;
+}
+
