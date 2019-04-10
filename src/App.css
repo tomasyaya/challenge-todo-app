@@ -93,3 +93,9 @@ h4 {
   opacity: 0.9;
   text-transform: uppercase;
 }
+
+#validation {
+  color: red;
+  font-size: 0.8em;
+  text-transform: uppercase;
+}
