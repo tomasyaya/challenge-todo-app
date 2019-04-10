@@ -39,9 +39,8 @@ export const withTodos = (Comp) => {
     try {
       const todos = await todoService.getTodos();
       this.setState({
-        todos: [...todos],
         doneTodos: [...todos].filter(todo => todo.done),
-        undoneTodos: [...todos].filter(todo => !todo.done)
+        todos: [...todos].filter(todo => !todo.done)
       })
       
     } catch(error) {

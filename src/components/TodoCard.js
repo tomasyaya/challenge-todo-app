@@ -20,9 +20,9 @@ class TodoCard extends Component {
   }
 
   handleDone = async () => {
-    const { id, title, body, getAllTodos } = this.props;
+    const { id, title, body, getAllTodos, done: isDone } = this.props;
     const done = {
-      done: true,
+      done: !isDone,
       title,
       body
     }
@@ -35,13 +35,14 @@ class TodoCard extends Component {
   }
 
   render() {
-    const { title, body } = this.props
+    const { title, body, done } = this.props
+    console.log(done)
     return (
       <div className="todo-card">
         <h4>{title}</h4>
         <p>{body}</p>
         <button onClick={this.handleClick}>X</button>
-        <button onClick={this.handleDone}>Done</button>
+        <button onClick={this.handleDone}>{!done ? "Done" : "Undone"}</button>
       </div>
     );
   }

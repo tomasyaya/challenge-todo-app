@@ -33,13 +33,14 @@ class DisplayTodo extends Component {
   paintDoneTodos = () => {
     const { doneTodos } = this.props;
     return doneTodos.map(todo => {
-      const { title, body, _id } = todo;
+      const { title, body, _id, done } = todo;
       return (
         <TodoCard
         key={_id}
         title={title}
         body={body}
         id={_id}
+        done={done}
         />
       )
     })
