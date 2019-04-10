@@ -14,6 +14,7 @@ export const withTodos = (Comp) => {
             return <Comp 
               getAllTodos={todoStore.getAllTodos}
               todos={todoStore.todos}
+              doneTodos={todoStore.doneTodos}
               {...this.props} />
           }}
         </Consumer>
@@ -24,7 +25,9 @@ export const withTodos = (Comp) => {
 
  class TodosProv extends Component {
   state = {
-    todos: []
+    todos: [],
+    doneTodos: [],
+    undoneTodos: []
   }
 
   componentDidMount(){
@@ -32,12 +35,15 @@ export const withTodos = (Comp) => {
   }
 
   getAllTodos = async () => {
+    // const { todos: allTodos, doneTodos, undoneTodos } = this.state;
     try {
       const todos = await todoService.getTodos();
       this.setState({
-        todos: [...todos]
+        todos: [...todos],
+        doneTodos: [...todos].filter(todo => todo.done),
+        undoneTodos: [...todos].filter(todo => !todo.done)
       })
-      console.log(todos)
+      
     } catch(error) {
       console.log(error)
     }
@@ -45,11 +51,12 @@ export const withTodos = (Comp) => {
 
   render() {
       const { children } = this.props;
-      const { todos } = this.state;
+      const { todos, doneTodos } = this.state;
         return (
           <Provider value={{
             getAllTodos: this.getAllTodos,
-            todos
+            todos,
+            doneTodos
             }}>
             {children}
           </Provider>    

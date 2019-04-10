@@ -22,7 +22,8 @@ class AddTodo extends Component {
     const { getAllTodos } = this.props;
     const newTodo = {
       title,
-      body
+      body,
+      done: false
     }
     try {
       await todoService.createTodo(newTodo);

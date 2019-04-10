@@ -30,12 +30,29 @@ class DisplayTodo extends Component {
     })
   }
 
+  paintDoneTodos = () => {
+    const { doneTodos } = this.props;
+    return doneTodos.map(todo => {
+      const { title, body, _id } = todo;
+      return (
+        <TodoCard
+        key={_id}
+        title={title}
+        body={body}
+        id={_id}
+        />
+      )
+    })
+  }
+
   render() {
     const { isLoaded } = this.state;
     return (
       <div className="display-todos-container">
-        <h1>display todo</h1>
+        <h1>Todos</h1>
         {isLoaded ? this.paintTodos() : null}
+        <h2>Done Todos</h2>
+        {isLoaded ? this.paintDoneTodos() : null}
       </div>
     );
   }

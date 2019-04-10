@@ -19,6 +19,20 @@ class TodoCard extends Component {
     this.deleteTodo()
   }
 
+  handleDone = async () => {
+    const { id, title, body, getAllTodos } = this.props;
+    const done = {
+      done: true,
+      title,
+      body
+    }
+    try {
+      await todoService.doneTodo(id, done)
+      getAllTodos()
+    } catch(error) {
+      console.log(error)
+    }
+  }
 
   render() {
     const { title, body } = this.props
@@ -27,6 +41,7 @@ class TodoCard extends Component {
         <h4>{title}</h4>
         <p>{body}</p>
         <button onClick={this.handleClick}>X</button>
+        <button onClick={this.handleDone}>Done</button>
       </div>
     );
   }

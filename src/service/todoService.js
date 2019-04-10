@@ -23,6 +23,10 @@ class TodoService {
       .then(({data}) => data)
   }
   
+  doneTodo = (id, body) => {
+    return this.api.put(`/todos/${id}`, body)
+      .then(({data}) => data)
+  }
 }
 
 const todoService = new TodoService();
