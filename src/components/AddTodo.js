@@ -42,7 +42,7 @@ class AddTodo extends Component {
     console.log(this.props)
     return (
       <div className="add-todo-container">
-        <h1>Add Todo</h1>
+        <h1>Todo List</h1>
         <form onSubmit={this.handleSubmit}>
           <input type="text" name="title" placeholder="title" value={title} onChange={this.handleChange}/>
           <input type="text" name="body" placeholder="message" value={body} onChange={this.handleChange}/>

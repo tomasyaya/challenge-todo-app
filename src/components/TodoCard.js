@@ -38,13 +38,13 @@ class TodoCard extends Component {
     const { title, body, done } = this.props
     return (
       <div className="todo-card">
-        <div>
+        <div id="main">
           <h4>{title}</h4>
           <p>{body}</p>
         </div>
-        <div>
-          <button onClick={this.handleClick}>X</button>
-          <button onClick={this.handleDone}>{!done ? "Done" : "Undone"}</button>
+        <div id="buttons">
+          <button id="delete-button" onClick={this.handleClick}>X</button>
+          <button id="done-button" onClick={this.handleDone}>{!done ? "Done" : "Undone"}</button>
         </div>
       </div>
     );

@@ -2,6 +2,12 @@ body {
   margin: 0;
 }
 
+.app-main-container {
+  background-image: url('https://images.unsplash.com/photo-1540350394557-8d14678e7f91?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60');
+  background-size: cover;
+  background-position: center;
+}
+
 .add-todo-container {
   display: flex;
   flex-direction: column;
@@ -17,6 +23,28 @@ body {
   justify-content: center;
 }
 
+.add-todo-container input {
+  height: 25px;
+  width: 60%;
+  margin: 5px auto;
+  border: none;
+  border-radius: 10px;
+  opacity: 0.8;
+}
+
+.add-todo-container button {
+  text-transform: uppercase;
+  color: white;
+  opacity: 0.9;
+  font-weight: bold;
+  font-size: 1.1em;
+}
+
+.add-todo-container input::placeholder {
+  padding-left: 10px;
+  text-transform: uppercase;
+}
+
 .display-todos-container {
   text-align: center;
   margin: 0 auto;
@@ -30,7 +58,38 @@ body {
   text-align: start;
   padding: 5px;
   padding-left: 10px;
-  width: 50%;
+  width: 70%;
   margin: auto;
+  display: flex;
+  justify-content: space-between;
+  background: rgba(0,0,0,0.1)
 }
 
+#buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-top: 15px;
+}
+
+h1, h2 {
+  text-transform: uppercase;
+  color: #313131;
+}
+
+h4 {
+  text-transform: uppercase;
+  color: white;
+  opacity: 0.8;
+}
+
+#delete-button {
+  color: red;
+  opacity: 0.8;
+}
+
+#done-button {
+  color: white;
+  opacity: 0.9;
+  text-transform: uppercase;
+}

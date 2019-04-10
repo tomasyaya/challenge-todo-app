@@ -50,9 +50,9 @@ class DisplayTodo extends Component {
     const { isLoaded } = this.state;
     return (
       <div className="display-todos-container">
-        <h1>Todos</h1>
+        <h2>Todos</h2>
         {isLoaded ? this.paintTodos() : null}
-        <h2>Done Todos</h2>
+        <h2>Done</h2>
         {isLoaded ? this.paintDoneTodos() : null}
       </div>
     );
