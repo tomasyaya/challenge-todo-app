@@ -36,13 +36,16 @@ class TodoCard extends Component {
 
   render() {
     const { title, body, done } = this.props
-    console.log(done)
     return (
       <div className="todo-card">
-        <h4>{title}</h4>
-        <p>{body}</p>
-        <button onClick={this.handleClick}>X</button>
-        <button onClick={this.handleDone}>{!done ? "Done" : "Undone"}</button>
+        <div>
+          <h4>{title}</h4>
+          <p>{body}</p>
+        </div>
+        <div>
+          <button onClick={this.handleClick}>X</button>
+          <button onClick={this.handleDone}>{!done ? "Done" : "Undone"}</button>
+        </div>
       </div>
     );
   }
